@@ -28,6 +28,7 @@
 		.ygo { background:linear-gradient(145deg,#e7a51a,#9b430f); }.poke { background:linear-gradient(145deg,#ef5350,#8b1d3c); }.magic { background:linear-gradient(145deg,#3876bd,#18355d); }.rules { background:linear-gradient(145deg,#37a67a,#125941); }
 		section { padding:72px 0; }.section-title { max-width:680px; margin-bottom:30px; }.section-title h2 { margin:5px 0 8px; font-size:clamp(1.8rem,4vw,2.8rem); line-height:1.1; }.section-title p { color:var(--muted); }
 		.cards { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }.card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:25px; box-shadow:0 8px 22px #1d28400b; }.card .icon { font-size:1.8rem; }.card h3 { margin:12px 0 6px; }.card p { margin:0; color:var(--muted); }
+		.place-grid { display:grid; grid-template-columns:.9fr 1.1fr; align-items:center; gap:44px; }.place-image { width:100%; height:100%; min-height:320px; object-fit:cover; border-radius:16px; box-shadow:0 12px 28px #1d28401a; }.place-copy p { color:var(--muted); }.place-copy p:last-child { margin-bottom:0; }
 		.rule-list { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }.rule { padding:18px 20px 18px 52px; position:relative; background:white; border:1px solid var(--line); border-radius:12px; }.rule b { display:block; }.rule span { color:var(--muted); font-size:.94rem; }.number { position:absolute; left:18px; top:20px; width:23px; height:23px; display:grid; place-items:center; background:#eeeaff; color:var(--purple); border-radius:50%; font-weight:800; font-size:.78rem; }
 		.notice { padding:25px; border-radius:16px; background:#ece9ff; color:#302072; }.notice strong { display:block; margin-bottom:3px; }
 		footer { padding:28px 0; background:#101832; color:#aeb5cd; font-size:.9rem; }.footer-inner { display:flex; justify-content:space-between; gap:20px; }
@@ -62,14 +63,14 @@
     gap: 5px;
     font-size: 0.9rem;
 }
-		@media (max-width:760px) { .container { width:min(100% - 28px, 600px); } .nav-links { display:none; } .hero { padding:58px 0 70px; }.hero-grid { grid-template-columns:1fr; gap:38px; }.showcase { max-width:430px; margin:auto; transform:rotate(2deg); }.cards,.rule-list { grid-template-columns:1fr; } section { padding:52px 0; }.footer-inner { flex-direction:column; gap:5px; } }
+		@media (max-width:760px) { .container { width:min(100% - 28px, 600px); } .nav-links { display:none; } .hero { padding:58px 0 70px; }.hero-grid { grid-template-columns:1fr; gap:38px; }.showcase { max-width:430px; margin:auto; transform:rotate(2deg); }.cards,.rule-list,.place-grid { grid-template-columns:1fr; } .place-image { min-height:220px; max-height:300px; } section { padding:52px 0; }.footer-inner { flex-direction:column; gap:5px; } }
 	</style>
 </head>
 <body>
 	<header>
 		<nav class="container">
 			<a class="logo" href="#accueil">TCG<span>•</span>RENCONTRE</a>
-			<div class="nav-links"><a href="#jeux">Les jeux</a><a href="#regles">Les règles</a><a href="#infos">Infos pratiques</a></div>
+			<div class="nav-links"><a href="#jeux">Les jeux</a><a href="#lieu">Le lieu</a><a href="#regles">Les règles</a><a href="#infos">Infos pratiques</a></div>
 		</nav>
 		<div class="hero" id="accueil">
 			<div class="container hero-grid">
@@ -98,6 +99,18 @@
 					<article class="card"><div class="icon">⚡</div><h3>Pokémon</h3><p>Attaquez avec vos Pokémon, utilisez les Énergies et mettez K.O. les Pokémon adverses pour gagner des récompenses.</p></article>
 					<article class="card"><div class="icon">✨</div><h3>Magic</h3><p>Lancez des sorts, développez votre mana et protégez vos points de vie grâce à des choix tactiques.</p></article>
 					<article class="card"><div class="icon">🔄</div><h3>Échange de cartes</h3><p>Présentez vos cartes et échangez-les directement avec d'autres participants. Aucun échange monétaire n'est permis.</p></article>
+				</div>
+			</div>
+		</section>
+
+		<section id="lieu">
+			<div class="container place-grid">
+				<img class="place-image" src="moulinsGM.jpg" alt="les Grands Moulins">
+				<div class="place-copy">
+					<div class="section-title"><div class="eyebrow">Un lieu pour apprendre</div><h2>Les Grands Moulins de Graçay</h2></div>
+					<p>À Graçay, au cœur du Pays de Vierzon, la Maison des Énergies est installée dans un ancien moulin entièrement rénové. Ce centre d’hébergement et d’animations scientifiques invite à découvrir les énergies dans une approche de développement durable.</p>
+					<p>Propriété de la communauté de communes de Vierzon Sologne Berry, la Maison des Énergies est gérée par la F.O.L. 18 depuis son ouverture en mai 2006. Elle propose du matériel et un environnement axé sur l’écologie, la nature et la biodiversité, ainsi que de nombreuses activités pédagogiques.</p>
+					<p>Les Grands Moulins, centre de vacances de la Ligue de l’Enseignement du Cher, ont ainsi pour mission l’éducation à l’environnement et au développement durable.</p>
 				</div>
 			</div>
 		</section>
