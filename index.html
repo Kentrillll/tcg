@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Rencontre TCG — Yu-Gi-Oh!, Pokémon & Magic</title>
+	<style>
+		:root { --ink:#17213c; --muted:#667085; --bg:#f7f8fc; --card:#fff; --line:#e6e8f0; --purple:#6d4aff; }
+		* { box-sizing:border-box; }
+		body { margin:0; color:var(--ink); background:var(--bg); font-family:Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; line-height:1.6; }
+		a { color:inherit; text-decoration:none; }
+		.container { width:min(1120px, calc(100% - 40px)); margin:auto; }
+		header { background:#101832; color:white; }
+		nav { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:25px; }
+		.logo { font-weight:900; letter-spacing:.08em; font-size:1.1rem; }
+		.logo span { color:#a994ff; }
+		.nav-links { display:flex; gap:24px; color:#c8cce0; font-size:.95rem; }
+		.hero { padding:82px 0 95px; background:radial-gradient(circle at 85% 20%, #37306d 0, #101832 42%, #101832 100%); }
+		.hero-grid { display:grid; grid-template-columns:1.2fr .8fr; align-items:center; gap:55px; }
+		.eyebrow { color:#b9aaff; font-weight:800; text-transform:uppercase; font-size:.78rem; letter-spacing:.14em; }
+		h1 { margin:13px 0 18px; max-width:680px; font-size:clamp(2.4rem, 6vw, 4.8rem); line-height:1.04; letter-spacing:-.05em; }
+		.hero p { color:#d6d9e8; max-width:590px; font-size:1.12rem; }
+		.button { display:inline-block; margin-top:18px; padding:13px 22px; border-radius:10px; background:#fff; color:#3921a6; font-weight:800; }
+		.showcase { display:grid; grid-template-columns:repeat(2, 1fr); gap:14px; transform:rotate(4deg); }
+		.tile { min-height:145px; padding:20px; border-radius:18px; color:white; display:flex; flex-direction:column; justify-content:flex-end; box-shadow:0 16px 35px #060a194d; }
+		.tile strong { font-size:1.35rem; }.tile small { opacity:.85; }
+		.ygo { background:linear-gradient(145deg,#e7a51a,#9b430f); }.poke { background:linear-gradient(145deg,#ef5350,#8b1d3c); }.magic { background:linear-gradient(145deg,#3876bd,#18355d); }.rules { background:linear-gradient(145deg,#37a67a,#125941); }
+		section { padding:72px 0; }.section-title { max-width:680px; margin-bottom:30px; }.section-title h2 { margin:5px 0 8px; font-size:clamp(1.8rem,4vw,2.8rem); line-height:1.1; }.section-title p { color:var(--muted); }
+		.cards { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }.card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:25px; box-shadow:0 8px 22px #1d28400b; }.card .icon { font-size:1.8rem; }.card h3 { margin:12px 0 6px; }.card p { margin:0; color:var(--muted); }
+		.place-grid { display:grid; grid-template-columns:.9fr 1.1fr; align-items:center; gap:44px; }.place-image { width:100%; height:100%; min-height:320px; object-fit:cover; border-radius:16px; box-shadow:0 12px 28px #1d28401a; }.place-copy p { color:var(--muted); }.place-copy p:last-child { margin-bottom:0; }
+		.rule-list { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }.rule { padding:18px 20px 18px 52px; position:relative; background:white; border:1px solid var(--line); border-radius:12px; }.rule b { display:block; }.rule span { color:var(--muted); font-size:.94rem; }.number { position:absolute; left:18px; top:20px; width:23px; height:23px; display:grid; place-items:center; background:#eeeaff; color:var(--purple); border-radius:50%; font-weight:800; font-size:.78rem; }
+		.notice { padding:25px; border-radius:16px; background:#ece9ff; color:#302072; }.notice strong { display:block; margin-bottom:3px; }
+		footer { padding:28px 0; background:#101832; color:#aeb5cd; font-size:.9rem; }.footer-inner { display:flex; justify-content:space-between; gap:20px; }
+		footer {
+    padding: 20px 0;
+}
+
+.footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.footer-logos img {
+    max-height: 55px;
+    max-width: 140px;
+    object-fit: contain;
+}
+
+.footer-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9rem;
+}
+		@media (max-width:760px) { .container { width:min(100% - 28px, 600px); } .nav-links { display:none; } .hero { padding:58px 0 70px; }.hero-grid { grid-template-columns:1fr; gap:38px; }.showcase { max-width:430px; margin:auto; transform:rotate(2deg); }.cards,.rule-list,.place-grid { grid-template-columns:1fr; } .place-image { min-height:220px; max-height:300px; } section { padding:52px 0; }.footer-inner { flex-direction:column; gap:5px; } }
+	</style>
+</head>
+<body>
+	<header>
+		<nav class="container">
+			<a class="logo" href="#accueil">TCG<span>•</span>RENCONTRE</a>
+			<div class="nav-links"><a href="#jeux">Les jeux</a><a href="#lieu">Le lieu</a><a href="#regles">Les règles</a><a href="#infos">Infos pratiques</a></div>
+		</nav>
+		<div class="hero" id="accueil">
+			<div class="container hero-grid">
+				<div>
+					<div class="eyebrow">Une journée • trois univers • zéro pression</div>
+					<h1>Joue, échange et partage ta passion.</h1>
+					<p>Bienvenue à la rencontre TCG aux Grands Moulins de Graçay : une journée conviviale pour jouer, découvrir ou perfectionner les règles de Yu-Gi-Oh!, Pokémon et Magic: The Gathering, et échanger vos cartes.</p>
+					<a class="button" href="#regles">Découvrir le règlement ↓</a>
+				</div>
+				<div class="showcase" aria-label="Les trois jeux de la rencontre">
+					<div class="tile ygo"><small>Jeu de cartes</small><strong>Yu-Gi-Oh!</strong></div>
+					<div class="tile poke"><small>Jeu de cartes</small><strong>Pokémon</strong></div>
+					<div class="tile magic"><small>Jeu de cartes</small><strong>Magic</strong></div>
+					<div class="tile rules"><small>Esprit de la journée</small><strong>Fair-play</strong></div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main>
+		<section id="jeux">
+			<div class="container">
+				<div class="section-title"><div class="eyebrow">Jouer, partager et échanger</div><h2>Un espace pour chaque joueur</h2><p>Venez avec votre deck, les cartes que vous souhaitez montrer ou échanger, votre curiosité et l'envie de rencontrer d'autres passionnés.</p></div>
+				<div class="cards">
+					<article class="card"><div class="icon">🃏</div><h3>Yu-Gi-Oh!</h3><p>Invoquez vos monstres, activez vos cartes Magie et Piège, puis réduisez les Life Points adverses à zéro.</p></article>
+					<article class="card"><div class="icon">⚡</div><h3>Pokémon</h3><p>Attaquez avec vos Pokémon, utilisez les Énergies et mettez K.O. les Pokémon adverses pour gagner des récompenses.</p></article>
+					<article class="card"><div class="icon">✨</div><h3>Magic</h3><p>Lancez des sorts, développez votre mana et protégez vos points de vie grâce à des choix tactiques.</p></article>
+					<article class="card"><div class="icon">🔄</div><h3>Échange de cartes</h3><p>Présentez vos cartes et échangez-les directement avec d'autres participants. Aucun échange monétaire n'est permis.</p></article>
+				</div>
+			</div>
+		</section>
+
+		<section id="lieu">
+			<div class="container place-grid">
+				<img class="place-image" src="tcg/gmoulinsGM.jpg" alt="les Grands Moulins">
+				<div class="place-copy">
+					<div class="section-title"><div class="eyebrow">Un lieu pour apprendre</div><h2>Les Grands Moulins de Graçay</h2></div>
+					<p>À Graçay, au cœur du Pays de Vierzon, la Maison des Énergies est installée dans un ancien moulin entièrement rénové. Ce centre d’hébergement et d’animations scientifiques invite à découvrir les énergies dans une approche de développement durable.</p>
+					<p>Propriété de la communauté de communes de Vierzon Sologne Berry, la Maison des Énergies est gérée par la F.O.L. 18 depuis son ouverture en mai 2006. Elle propose du matériel et un environnement axé sur l’écologie, la nature et la biodiversité, ainsi que de nombreuses activités pédagogiques.</p>
+					<p>Les Grands Moulins, centre de vacances de la Ligue de l’Enseignement du Cher, ont ainsi pour mission l’éducation à l’environnement et au développement durable.</p>
+				</div>
+			</div>
+		</section>
+
+		<section id="regles" style="background:#fff;">
+			<div class="container">
+				<div class="section-title"><div class="eyebrow">Règlement commun</div><h2>Les règles de la rencontre</h2><p>Le but est de jouer dans une ambiance accessible, respectueuse et amusante et de permetre d'échanger vos cartes</p></div>
+				<div class="rule-list">
+					<div class="rule"><i class="number">1</i><b>Fair-play obligatoire</b><span>Respectez les adversaires, les arbitres et le matériel.</span></div>
+					<div class="rule"><i class="number">2</i><b>Parties amicales</b><span>Expliquez vos actions et aidez les débutants à progresser.</span></div>
+					<div class="rule"><i class="number">3</i><b>Deck personnel</b><span>Apportez un deck conforme aux règles officielles de votre jeu.</span></div>
+					<div class="rule"><i class="number">4</i><b>En cas de doute</b><span>Arrêtez la partie et demandez conseil à un organisateur.</span></div>
+				</div>
+				<div class="notice" id="infos" style="margin-top:22px;"><strong>À prévoir le jour J</strong> Rendez-vous aux Grands Moulins de Graçay avec votre deck, vos cartes à échanger, des protège-cartes, un tapis de jeu si vous en avez un et, surtout, votre bonne humeur. Les échanges de cartes sont autorisés, mais aucun échange monétaire n'est permis. Des tables d'initiation sont prévues pour les nouveaux joueurs.</div>
+			</div>
+		</section>
+	</main>
+	<footer>
+    <div class="container footer-inner">
+
+        <div class="footer-logos">
+            <img src="tcg/liguelogo.png" alt="Ligue de l'Enseignement du Cher">
+            <img src="tcg/GM-Maison-des-energies_blanc.png" alt="Maison des Énergies">
+            <img src="tcg/caf.png" alt="CAF">
+            <img src="villegracay.jfif" alt="Ville de Graçay">
+        </div>
+
+        <div class="footer-text">
+            <span>© <?= date('Y') ?> Ligue de l'Enseignement du Cher — Tous droits réservés</span>
+            
+        </div>
+
+    </div>
+</footer>
+</body>
+</html>
